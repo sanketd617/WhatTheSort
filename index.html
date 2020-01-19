@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game!</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+</head>
+<body>
+
+    <div id="container">
+        <div id="mobile-timer">
+            <div id="timer">00:00</div>
+            <div id="moves">0 moves</div>
+        </div>
+
+        <div id="game">
+
+        </div>
+
+        <div id="mobile-undo">
+            <div id="new-game" onclick="newGame()">New</div>
+            <div id="undo" onclick="undo()">Undo</div>
+            <div id="auto-solve" onclick="autoSolve()">Auto</div>
+        </div>
+
+    </div>
+
+    <div class="overlay">
+        <div class="title">
+            WhatTheSort!
+        </div>
+        <div class="difficulty">
+            <button onclick="setDifficulty(3, event)" class="difficulty-btn">EASY</button>
+            <button onclick="setDifficulty(5, event)" class="difficulty-btn">MEDIUM</button>
+            <button onclick="setDifficulty(7, event)" class="difficulty-btn">HARD</button>
+        </div>
+        <div class="custom-difficulty">
+
+            <label class="switch">
+                <input type="checkbox" onclick="changeDifficultyMode()">
+                <span class="slider round"></span>
+            </label>
+            &nbsp;CUSTOM
+
+            <div class="custom-selector">
+                <button onclick="changeDifficulty(-1)">-</button>
+                <div class="difficulty-value">3</div>
+                <button onclick="changeDifficulty(1)">+</button>
+            </div>
+        </div>
+        <div class="actions" onclick="startGame()">
+            START
+        </div>
+    </div>
+<!--    <button onclick="autoSolve()">AUTO SOLVE</button>-->
+    <script src="js/timer.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
